@@ -1,0 +1,13 @@
+services:
+  immich-export:
+    build: .
+    container_name: immich-export
+    ports:
+      - "5000:5000"
+    environment:
+      - IMMICH_URL=http://your-immich-instance:2283
+      - IMMICH_API_KEY=your-api-key-here
+      - EXPORT_DIR=/export
+    volumes:
+      - /mnt/user/photos/exports:/export
+    restart: unless-stopped
