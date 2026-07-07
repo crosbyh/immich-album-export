@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY export_album.py app.py ./
+COPY export_album.py restore_album.py app.py ./
 
 EXPOSE 5000
 
